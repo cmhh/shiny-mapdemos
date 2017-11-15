@@ -1,0 +1,10 @@
+html, body, .container, .container-fluid, .col-sm-10, div#map-container {
+   height: 100%!important;
+}
+
+.row{
+   position: absolute;
+   top: 70px;
+   bottom: 0;
+   width: 100%!important;
+}

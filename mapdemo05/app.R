@@ -68,20 +68,23 @@ maptheme <- function(source = "some place", url = "http://www.someplace.com"){
   res
 }
 
-ui <- fluidPage(
-  titlePanel("Highchart map..."),
-  
-  sidebarLayout(
-    sidebarPanel(
-      width = 2,
-      selectInput("var",
-                  "Select variable:",
-                  choices = c("v1", "v2"))
-    ),
+ui <- tagList(
+  tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "style.css")),
+  fluidPage(
+    titlePanel("Highchart map..."),
     
-    mainPanel(
-      width = 10,
-      highchartOutput("map")
+    sidebarLayout(
+      sidebarPanel(
+        width = 2,
+        selectInput("var",
+                    "Select variable:",
+                    choices = c("v1", "v2"))
+      ),
+      
+      mainPanel(
+        width = 10,
+        highchartOutput("map", height = "100%")
+      )
     )
   )
 )
